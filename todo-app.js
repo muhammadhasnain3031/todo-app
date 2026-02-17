@@ -1,14 +1,6 @@
 const express = require('express');
 const path = require('path');
 const {MongoClient, ObjectId} = require('mongodb');
-const mongoose = require('mongoose');
-
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-.then(() => console.log("MongoDB Connected"))
-.catch(err => console.error(err));
 
 
 const app = express();
@@ -72,3 +64,7 @@ ConnectToDatabase()
 app.listen(PORT,()=>{
     console.log(`app is running of port ${PORT}`)
 })
+const PORTi = process.env.PORT || 4000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});

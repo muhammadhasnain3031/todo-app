@@ -15,15 +15,4 @@
     "mongoose": "^9.2.1"
   }
 }
- {
-  "version": 2,
-  "builds": [
-    { "src": "todo-app.js", "use": "@vercel/node" }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "todo-app.js" }
-  ]
-}
-"scripts": {
-  "start": "node todo-app.js"
-}
+
