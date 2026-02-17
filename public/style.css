@@ -6,6 +6,7 @@ body {
   margin: 0;
   padding: 20px;
   text-align: center;
+  font-size: 16px; /* default desktop font size */
 }
 
 /* Headings */
@@ -42,7 +43,7 @@ input[type="text"], select {
   outline: none;
 }
 
-/* Form buttons (Add / Update) */
+/* Form buttons */
 form button {
   padding: 10px 18px;
   background: #007BFF;
@@ -61,7 +62,7 @@ form button:hover {
 
 /* Common style for card buttons */
 .btn-delete, .btn-edit {
-  display: inline-block;       /* make <a> behave like button */
+  display: inline-block;
   padding: 8px 14px;
   font-size: 14px;
   border-radius: 5px;
@@ -126,4 +127,40 @@ a:hover {
 .priority-low {
   color: #32cd32;
   font-weight: bold;
+}
+
+/* ---------------- Responsive Media Queries ---------------- */
+
+/* Tablet (max width 768px) */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    padding: 15px;
+  }
+  form, .todo-card {
+    width: 80%; /* shrink card width */
+    padding: 20px;
+  }
+  input[type="text"], select {
+    width: 100%; /* full width inputs */
+  }
+}
+
+/* Mobile (max width 480px) */
+@media (max-width: 480px) {
+  body {
+    font-size: 12px;
+    padding: 10px;
+  }
+  form, .todo-card {
+    width: 95%; /* almost full screen */
+    padding: 15px;
+  }
+  h1 {
+    font-size: 20px; /* smaller heading */
+  }
+  .btn-delete, .btn-edit {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
 }
