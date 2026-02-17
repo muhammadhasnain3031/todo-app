@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Todo</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h1>Edit Todo</h1>
+
+  <!-- Form to update todo -->
+  <form action="/edit/<%= todo._id %>" method="POST">
+    <input type="text" name="task" value="<%= todo.task %>" required>
+
+    <!-- Priority dropdown with selected value -->
+    <select name="priority" required>
+      <option value="High" <%= todo.priority === 'High' ? 'selected' : '' %>>High Priority</option>
+      <option value="Medium" <%= todo.priority === 'Medium' ? 'selected' : '' %>>Medium Priority</option>
+      <option value="Low" <%= todo.priority === 'Low' ? 'selected' : '' %>>Low Priority</option>
+    </select>
+
+    <button type="submit">Update Todo</button>
+  </form>
+
+  <!-- Link back to list -->
+  <p><a href="/show-todos">Back to Todos</a></p>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Todo</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h1>Add a New Todo</h1>
+
+  <!-- Form to add a new todo -->
+  <form action="/add" method="POST">
+    <!-- Input field for todo task -->
+    <input type="text" name="task" placeholder="Enter your task" required>
+
+    <!-- Priority dropdown -->
+    <select name="priority" required>
+      <option value="High">High Priority</option>
+      <option value="Medium">Medium Priority</option>
+      <option value="Low">Low Priority</option>
+    </select>
+
+    <!-- Submit button -->
+    <button type="submit">Add Todo</button>
+  </form>
+
+  <!-- Link to show all todos -->
+  <p><a href="/show-todos">View All Todos</a></p>
+</body>
+</html>

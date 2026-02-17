@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todo List</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h1>Todo List</h1>
+
+  <!-- Loop through todos passed from server -->
+  <div class="todo-list">
+    <% todos.forEach(function(todo){ %>
+      <div class="todo-card">
+        <!-- Task text -->
+        <p><strong><%= todo.task %></strong></p>
+
+        <!-- Priority with safe check -->
+        <p>
+          Priority: 
+          <% if (todo.priority) { %>
+            <span class="priority-<%= todo.priority.toLowerCase() %>">
+              <%= todo.priority %>
+            </span>
+          <% } else { %>
+            <span class="priority-low">Not Set</span>
+          <% } %>
+        </p>
+
+        <!-- Delete form -->
+        <form action="/delete" method="POST" style="display:inline;">
+          <input type="hidden" name="id" value="<%= todo._id %>">
+          <button type="submit" class="btn-delete">Delete</button>
+        </form>
+
+        <!-- Edit link -->
+        <a href="/edit/<%= todo._id %>" class="btn-edit">Edit</a>
+      </div>
+    <% }) %>
+  </div>
+
+  <!-- Link back to add form -->
+  <p><a href="/">Add New Todo</a></p>
+</body>
+</html>
