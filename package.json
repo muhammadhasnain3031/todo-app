@@ -15,7 +15,7 @@
     "mongoose": "^9.2.1"
   }
 }
-{
+ {
   "version": 2,
   "builds": [
     { "src": "todo-app.js", "use": "@vercel/node" }
